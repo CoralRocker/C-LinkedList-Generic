@@ -22,5 +22,8 @@
 # Creating a Linked List
 Linked Lists should be created by using the provided `LL* initLinkedList(void* val)` method and manipulated using the given methods to ensure that no undocumented behavior occurs. The `void freeLinkedList(LL* start)` method is provided to free memory used by the list.
 
+# Basic Quirks To Be Aware Of
+The LinkedList works because `void*` can be any type. You will get warnings when passing any value to it unless you cast said value to `void*` by doing `(void*)xyz`. There is currently no way to track what type of variable the list holds. It is up to you to do so. I am working on making a simple system to keep track of types, but there is no way to standardize the types, so it will be up to the programmer to keep track of types.
+
 # More information
 The header file is thoroughly commented, and contains more insights on the uses and quirks of each method in its headings and comments.
