@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "VoidLinkedList.h"
+#include "LinkedList.h"
 
 void printLL(LL *start)
 {
