@@ -1,4 +1,4 @@
-# C-LinkedList
+# C-LinkedList-Generic
 
 # Accessor Methods
 |Method|Usage|
