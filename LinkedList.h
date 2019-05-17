@@ -48,7 +48,15 @@ void pushBackLinkedList(LL *start, void* val)
 	t->nxt = nxt;
 }
 
-/* Adds a link to the list at a certain index, pushing back the rest on the links.
+/* Adds a link to the list at a certain index, pushing back the rest on the links. It's necessary
+ * to return the address of the first link in the list to preserve list continuity. The method 
+ * will always return the address of the first link in the list, and said address should always be
+ * assigned to the start variable. 
+ *
+ * Ex: <linkedListStart> = insertLinkedList(<linkedListStart>, index, value);
+ *
+ * if the index was 0, the address of the starting pointer would need to change, thus the method 
+ * returns the adress of the inserted value, in that case.
  */
 LL* insertLinkedList(LL *start, int index, void* val)
 {
