@@ -12,7 +12,7 @@
 # Modifier Methods
 |Method|Usage|
 |:-:|:-|
-|void insertLinkedList(LL *start, int index, void* val)|insertLinkedList(ll, index, yourNum) where ll is the linkedList start, index is the index, and yourNum is the value to place. Places a new link into the list at a given index, and relinks list in order to preserve continuity.|
+|LL* insertLinkedList(LL *start, int index, void* val)|insertLinkedList(ll, index, yourNum) where ll is the linkedList start, index is the index, and yourNum is the value to place. Places a new link into the list at a given index, and relinks list in order to preserve continuity. Returns the address to the first item in the link. Only important if your index is 0, so that your start variable is correctly assigned to the start of the list.|
 |void pushBackLinkedList(LL *start, void* val)|pushBackLinkedList(ll, yourNum) where ll is the linkedList start, and yourNum is the value to place. Adds given value to a new link at the back of the list.|
 |void popBackLinkedList(LL *start)|popBackLinkedList(ll) where ll is the linkedList start. Removes the last link from the list.|
 |void deleteLink(LL *start, int index)|deleteLink(ll, index) where ll is the linkedList start, and index is the index. Removes the link at the given index. Relinks list for continuity.|
