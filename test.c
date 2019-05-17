@@ -31,7 +31,7 @@ int main()
 	printf("\tsetLink(ll, 1, 1000)\n");
 	printf("\tswapLink(ll, 3, 4)\n");
 
-	ll = insertLinkedList(ll, 0, 2019);
+	ll = insertLinkedList(ll, 0, 2019);	
 	popBackLinkedList(ll);
 	pushBackLinkedList(ll, 2018);
 	deleteLink(ll, 2);
@@ -42,4 +42,5 @@ int main()
 	printf("\nFinal List:\n"); 
 
 	printLL(ll);
+	freeLinkedList(ll);
 }

@@ -1,6 +1,10 @@
 #pragma once
 #include <stdlib.h>
 
+/* The struct holding the generic value. The nxt value holds the address of the next link in the
+ * list, which is used to traverse the list from a given starting point. The val value is a void
+ * pointer, which can hold a pointer to any value you would like. How quaint.
+ */
 typedef struct LL {
 	struct LL *nxt;
 	void* val;
@@ -24,12 +28,12 @@ LL *initLinkedList(void* val)
  */
 void freeLinkedList(LL* start)
 {
-	LL *t = start;
-	while(t->nxt)
+	LL *t = start, *t2 = start;
+	while(t2)
 	{
-		start = t->nxt;
+		t2 = t->nxt;
 		free(t);
-		t=start;
+		t =  t2;
 	}
 }
 
@@ -48,23 +52,22 @@ void pushBackLinkedList(LL *start, void* val)
  */
 LL* insertLinkedList(LL *start, int index, void* val)
 {
-	LL *t = start;
-	for(int i = 0; i < index - 1; i++)
+	LL *t = start, *newLink = initLinkedList(val);
+	if(index == 0)
 	{
-		if(t->nxt != NULL)
-			t = t->nxt;
+		newLink->nxt = start;
+		return newLink;
+	}
+	for(int i = 0; i < index - 1; i++)
+		if(t->nxt)
+			t=t->nxt;
 		else
 			break;
-	}
-	LL *nxt = t->nxt;
-	LL *insert = initLinkedList(val);
-	t->nxt = insert;
-	insert->nxt = nxt;
-	if(index == 0)
-		return insert;
+	newLink->nxt = t->nxt;
+	t->nxt = newLink;
 	return start;
-}
 
+}
 
 /* Returns the amount of links in the list.
  */
