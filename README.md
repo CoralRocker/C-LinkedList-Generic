@@ -1,5 +1,8 @@
 # C-LinkedList-Generic
 
+# Why use a Linked List?
+A linked list allows for a non-continuous area of memory to be used as though it were continuous in memory. This is especially usefull in systems with very little or very erratic memory. There are downsides, however. The linked list is much slower to use than a vector of the same size, as the program has to traverse through the entire list in order to reach any given index. Additionally, it uses slightly more memory, as the list must store a pointer to the next link. The size of a single link is dependent on the address size of the system it is compiled and used on, such that the size is equal to two times the adress size of the system (the size of 2 void pointers).
+
 # Accessor Methods
 |Method|Usage|
 |:-:|:-|
