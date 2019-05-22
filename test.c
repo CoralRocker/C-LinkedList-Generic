@@ -9,19 +9,21 @@ void printLL(LL *start)
 
 int main()
 {
-
+	/* Create Linked List of size 10 */
 	printf("Init 10 length linked list...\n\n");
 	LL *ll = initLinkedList(0);
 	for(int i = 1; i < 10; i++)
 		pushBackLinkedList(ll, i);
 	printLL(ll);
 
+	/* Test accessor methods */
 	printf("Accessor Methods:\n");
 	printf("\tgetLink(ll, 4): %d\n", getLink(ll, 4));
 	printf("\tfrontLink(ll): %d\n", frontLink(ll));
 	printf("\tbackLink(ll): %d\n", backLink(ll));
 	printf("\tlinkPointer(ll, 4): %p\n", linkPointer(ll, 4));
 
+	/* Test modifier Methods */
 	printf("\nModifier Methods:\n");
 	printf("\tinsertLinkedList(ll, 0, 2019)\n");
 	printf("\tpopBackLinkedList(ll)\n");
