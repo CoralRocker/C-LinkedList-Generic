@@ -45,4 +45,14 @@ int main()
 
 	printLL(ll);
 	freeLinkedList(ll);
+
+	printf("\nTesting initSizedLinkedList(val, size) method.\n");
+	puts("Adding a value of 0, and a size of 238.");
+	ll = initSizedLinkedList(0, 238);
+	printf("\tll = %p\n", ll);
+	printf("\tsize = %ld\n", getSize(ll));
+	printLL(ll);
+	freeLinkedList(ll);
+
+
 }

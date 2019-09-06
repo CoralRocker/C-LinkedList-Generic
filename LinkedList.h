@@ -23,6 +23,20 @@ LL *initLinkedList(void* val)
 	return ll;
 }
 
+/* Initializes a linked list of the given size, with the given value assigned to each link.
+ * Sort of akin to a "calloc" for the linked list.
+ */
+LL *initSizedLinkedList(void* val, size_t size){
+	LL* ll = initLinkedList(val);
+	LL* start = ll;
+	for(size_t i = 1; i < size; i++){
+		LL* tmp = initLinkedList(val);
+		ll->nxt = tmp;
+		ll = tmp;
+	}
+	return start;
+}
+
 /* Frees every link in the list sequentially. This method assumes that the only methods used
  * to instatiate the list were the ones provided here, or malloc. 
  */
@@ -105,6 +119,18 @@ void* getLink(LL *start, int index)
 		t = t->nxt;
 	}
 	return t->val;
+}
+
+/* Returns the size of the list, including the given list.
+ */
+size_t getSize(LL *start){
+	size_t count = 0;
+	LL* tmp = start;
+	while(tmp != NULL){
+		count++;
+		tmp = tmp->nxt;
+	}
+	return count;
 }
 
 /* Removes a link from the list, and relinks the proceeding and preceeding links to each 
